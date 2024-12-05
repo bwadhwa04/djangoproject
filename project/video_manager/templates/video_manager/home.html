@@ -1,0 +1,39 @@
+{% extends 'video_manager/base.html' %}
+{% block content %}
+
+<div class="home-container">
+    <div class="main-section">
+        <div class="video-grid">
+            
+            {% for video in videos  %}
+            
+            <a href="{% url 'watch' video.id %}">
+            <div class="video-card">
+                <img src="{{ video.thumbnail.url }}" alt="Video Thumbnail" class="video-thumbnail">
+                <div class="video-info">
+                    <h3 class="video-title">{{ video.title }}</h3>
+                    <p class="video-views">{{ video.views }} views</p>
+                </div>
+            </div>
+            </a>
+
+            {% endfor %}
+        </div>
+    </div>
+    <div class="trending-section">
+        <h2 class="section-title">Trending Videos</h2>
+
+        {% for trending_video in trending_videos  %}
+
+        <div class="trending-video">
+            <img src="small-thumbnail1.jpg" alt="Trending Video" class="trending-thumbnail">
+            <div class="trending-info">
+                <h3 class="trending-title">Trending Video 1</h3>
+            </div>
+        </div>
+
+        {% endfor %}
+
+    </div>
+</div>
+{% endblock content %}

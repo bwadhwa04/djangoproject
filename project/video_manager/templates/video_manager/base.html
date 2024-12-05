@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DeeVeu - A video platform clone with interactive features and a dark theme.">
+    <meta name="keywords" content="DeeVeu, video platform, video sharing, Python, Django, dark theme">
+    <meta name="author" content="Your Name">
+    <title>DeeVeu</title>
+    <link rel="stylesheet" href="{% static 'css/video_styles.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="{% url "home" %}" class="logo">DeeVeu</a>
+        </div>
+        <div class="navbar-center">
+            <form action="/search" method="get">
+                <input type="text" name="q" placeholder="Search videos..." class="search-bar">
+            </form>
+        </div>
+        <div class="navbar-right">
+            <a href="{% url "login" %}" class="nav-button">Login</a>
+            <a href="{% url "register" %}" class="nav-button">Register</a>
+            <!-- If logged in -->
+            <!-- <a href="/profile" class="nav-button">Profile</a>
+            <a href="/logout" class="nav-button">Logout</a> -->
+        </div>
+    </nav>
+
+            {% block content %}
+              
+            {% endblock content %}
+</body>
+</html>

@@ -1,0 +1,46 @@
+{% extends 'video_manager/base.html' %}
+
+{% block content %}
+<div class="profile-container">
+    <!-- Profile Header -->
+    <div class="profile-header">
+        <img src="profile-pic.jpg" alt="Profile Picture" class="profile-picture">
+        <div class="profile-info">
+            <h2 class="profile-name">User Name</h2>
+            <p class="profile-subscribers">1.5M subscribers</p>
+            <button class="profile-edit-btn">Edit Profile</button>
+        </div>
+    </div>
+
+    <!-- Profile Navigation Tabs -->
+    <div class="profile-nav">
+        <button class="profile-tab active">Videos</button>
+        <button class="profile-tab">Playlists</button>
+        <button class="profile-tab">About</button>
+    </div>
+
+    <!-- Profile Content -->
+    <div class="profile-content">
+        <!-- Videos Section -->
+        <div class="profile-videos">
+            <h3>Uploaded Videos</h3>
+            <div class="profile-video-grid">
+                <!-- Repeat this block for each video -->
+                <div class="profile-video-item">
+                    <img src="video-thumbnail1.jpg" alt="Video Thumbnail" class="profile-video-thumbnail">
+                    <h4 class="profile-video-title">Video Title 1</h4>
+                    <p class="profile-video-views">1M views • 3 days ago</p>
+                </div>
+                <div class="profile-video-item">
+                    <img src="video-thumbnail2.jpg" alt="Video Thumbnail" class="profile-video-thumbnail">
+                    <h4 class="profile-video-title">Video Title 2</h4>
+                    <p class="profile-video-views">800K views • 1 week ago</p>
+                </div>
+                <!-- Add more videos as needed -->
+            </div>
+        </div>
+
+        <!-- Playlists and About sections can be added similarly -->
+    </div>
+</div>
+{% endblock %}

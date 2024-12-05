@@ -1,0 +1,61 @@
+{% extends 'video_manager/base.html' %}
+
+{% block content %}
+<div class="video-page-container">
+    <div class="video-section">
+        <div class="video-player">
+            <video controls width="200px" height="200px">
+                <source src="{{video.video_file.url}}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="video-details">
+            <h2 class="video-title">{{ video.title }}</h2>
+            <p class="video-views">{{ video.views }} views</p>
+            <div class="video-actions">
+                <button class="like-btn">
+                    <i class="fa fa-thumbs-up"></i> {{ video.likes }}
+                </button>
+                <button class="dislike-btn">
+                    <i class="fa fa-thumbs-down"></i> {{ video.dislikes }}
+                </button>
+            </div>
+            <div class="video-uploader">
+                <p>Uploaded by <strong>{{ video.uploaded_by }}</strong></p>
+            </div>
+            <div class="video-description">
+                <h3>Description</h3>
+                <p>{{ vide.description  }}</p>
+            </div>
+            <div class="comments-section">
+                <h3>Comments</h3>
+                <!-- Example comment -->
+                <div class="comment">
+                    <p><strong>User1:</strong> Great video!</p>
+                </div>
+                <div class="comment">
+                    <p><strong>User2:</strong> Thanks for sharing!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recommendations section (30%) -->
+    <div class="recommendations-section">
+        <h2 class="section-title">Recommended Videos</h2>
+        <div class="trending-video">
+            <img src="small-thumbnail1.jpg" alt="Recommended Video" class="trending-thumbnail">
+            <div class="trending-info">
+                <h3 class="trending-title">Recommended Video 1</h3>
+            </div>
+        </div>
+        <div class="trending-video">
+            <img src="small-thumbnail2.jpg" alt="Recommended Video" class="trending-thumbnail">
+            <div class="trending-info">
+                <h3 class="trending-title">Recommended Video 2</h3>
+            </div>
+        </div>
+        
+    </div>
+</div>
+{% endblock %}
